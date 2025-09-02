@@ -1,16 +1,17 @@
 apiVersion: k0rdent.mirantis.com/v1beta1
 kind: ClusterDeployment
 metadata:
-  name: my-gcp-cluster
+  name: gce-k0rdent
   namespace: kcm-system
 spec:
   template: gcp-standalone-cp-1-0-12
   credential: gcp-credential
   config:
-    project: k0rdent-demo-250901-1042 
-    region: us-west1
+    project: k0rdent-demo-250901-1042
+    region: us-west2
     network:
-      name: default
+      name: k0rdent-downstream
+      mtu: 1500
     controlPlane:
       replicas: 1
       instanceType: n1-standard-2
@@ -23,3 +24,4 @@ spec:
       image:
         family: ubuntu-minimal-2404-lts-amd64
       publicIP: true
+
