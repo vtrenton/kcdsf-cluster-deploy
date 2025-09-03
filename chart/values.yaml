@@ -1,0 +1,9 @@
+# Optional knobs if you want them later
+project: YOUR_GCP_PROJECT_ID
+region: us-west2
+networkName: k0rdent-downstream
+cpInstanceType: n1-standard-2
+workerInstanceType: n1-standard-2
+cpReplicas: 1
+workerReplicas: 2
+imageFamily: ubuntu-minimal-2404-lts-amd64

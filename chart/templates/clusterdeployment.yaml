@@ -1,0 +1,25 @@
+apiVersion: k0rdent.mirantis.com/v1beta1
+kind: ClusterDeployment
+metadata:
+  name: my-gcp-cluster
+  namespace: kcm-system
+spec:
+  template: gcp-standalone-cp-1-0-12
+  credential: gcp-credential
+  config:
+    project: {{ .Values.project }}
+    region: {{ .Values.region }}
+    network:
+      name: {{ .Values.networkName }}
+    controlPlane:
+      replicas: {{ .Values.cpReplicas }}
+      instanceType: {{ .Values.cpInstanceType }}
+      image:
+        family: {{ .Values.imageFamily }}
+      publicIP: true
+    worker:
+      replicas: {{ .Values.workerReplicas }}
+      instanceType: {{ .Values.workerInstanceType }}
+      image:
+        family: {{ .Values.imageFamily }}
+      publicIP: true
