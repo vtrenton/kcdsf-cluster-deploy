@@ -1,9 +1,8 @@
-# Optional knobs if you want them later
-project: YOUR_GCP_PROJECT_ID
-region: us-west2
-networkName: k0rdent-downstream
-cpInstanceType: n1-standard-2
-workerInstanceType: n1-standard-2
+project: "k0rdent-demo-250901-1042" # replace with your project id
+region: "us-west1"
+networkName: "k0rdent-downstream"
+cpInstanceType: "e2-standard-2"
+workerInstanceType: "e2-standard-2"
 cpReplicas: 1
 workerReplicas: 2
-imageFamily: ubuntu-minimal-2404-lts-amd64
+imageFamily: "projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20250213"

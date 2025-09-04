@@ -14,12 +14,10 @@ spec:
     controlPlane:
       replicas: {{ .Values.cpReplicas }}
       instanceType: {{ .Values.cpInstanceType }}
-      image:
-        family: {{ .Values.imageFamily }}
+      image: {{ .Values.imageFamily }}
       publicIP: true
     worker:
       replicas: {{ .Values.workerReplicas }}
       instanceType: {{ .Values.workerInstanceType }}
-      image:
-        family: {{ .Values.imageFamily }}
+      image: {{ .Values.imageFamily }}
       publicIP: true
