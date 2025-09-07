@@ -15,3 +15,4 @@ spec:
     worker:
       instanceType: {{ .Values.aws.worker.instanceType }}
       rootVolumeSize: {{ .Values.aws.worker.rootVolumeSize }}
+    publicIP: true
