@@ -1,0 +1,17 @@
+apiVersion: k0rdent.mirantis.com/v1beta1
+kind: ClusterDeployment
+metadata:
+  name: {{ .Values.aws.name }}
+  namespace: {{ .Values.aws.namespace }}
+spec:
+  template: {{ .Values.aws.template }}
+  credential: {{ .Values.aws.credential }}
+  config:
+    clusterLabels: {}
+    region: {{ .Values.aws.region }}
+    controlPlane:
+      instanceType: {{ .Values.aws.controlPlane.instanceType }}
+      rootVolumeSize: {{ .Values.aws.controlPlane.rootVolumeSize }}
+    worker:
+      instanceType: {{ .Values.aws.worker.instanceType }}
+      rootVolumeSize: {{ .Values.aws.worker.rootVolumeSize }}

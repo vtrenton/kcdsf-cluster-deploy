@@ -1,8 +1,24 @@
-project: "k0rdent-demo-250901-1042" # replace with your project id
-region: "us-west1"
-networkName: "k0rdent-downstream"
-cpInstanceType: "e2-standard-2"
-workerInstanceType: "e2-standard-2"
-cpReplicas: 1
-workerReplicas: 2
-imageFamily: "projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20250213"
+# GCloud configuration
+gcloud:
+  project: "k0rdent-demo-250901-1042" # replace with your project id
+  region: "us-west1"
+  networkName: "k0rdent-downstream"
+  cpInstanceType: "e2-standard-2"
+  workerInstanceType: "e2-standard-2"
+  cpReplicas: 1
+  workerReplicas: 2
+  imageFamily: "projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20250213"
+
+# AWS configuration
+aws:
+  name: "my-aws-clusterdeployment1"
+  namespace: "kcm-system"
+  template: "aws-standalone-cp-1-0-12"
+  credential: "aws-cluster-identity-cred"
+  region: "us-east-2"
+  controlPlane:
+    instanceType: "t3.small"
+    rootVolumeSize: 32
+  worker:
+    instanceType: "t3.small"
+    rootVolumeSize: 32
