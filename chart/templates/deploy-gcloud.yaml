@@ -7,17 +7,17 @@ spec:
   template: gcp-standalone-cp-1-0-12
   credential: gcp-credential
   config:
-    project: {{ .Values.project }}
-    region: {{ .Values.region }}
+    project: {{ .Values.gcloud.project }}
+    region: {{ .Values.gcloud.region }}
     network:
-      name: {{ .Values.networkName }}
+      name: {{ .Values.gcloud.networkName }}
     controlPlane:
-      instanceType: {{ .Values.cpInstanceType }}
-      image: {{ .Values.imageFamily }}
+      instanceType: {{ .Values.gcloud.cpInstanceType }}
+      image: {{ .Values.gcloud.imageFamily }}
       publicIP: true
-    controlPlaneNumber: {{ .Values.cpReplicas }}
+    controlPlaneNumber: {{ .Values.gcloud.cpReplicas }}
     worker:
-      instanceType: {{ .Values.workerInstanceType }}
-      image: {{ .Values.imageFamily }}
+      instanceType: {{ .Values.gcloud.workerInstanceType }}
+      image: {{ .Values.gcloud.imageFamily }}
       publicIP: true
-    workersNumber: {{ .Values.workerReplicas }}
+    workersNumber: {{ .Values.gcloud.workerReplicas }}
