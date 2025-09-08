@@ -29,19 +29,19 @@ spec:
       - name: argocd
         namespace: argocd
         template: argo-cd-7-8-0
-        values: |
-          redis-ha:
-            enabled: true
-          controller:
-            replicas: 1
-          server:
-            autoscaling:
-              enabled: true
-              minReplicas: 2
-          repoServer:
-            autoscaling:
-              enabled: true
-              minReplicas: 2
-          applicationSet:
-            replicas: 2
+        #values: |
+        #  redis-ha:
+        #    enabled: true
+        #  controller:
+        #    replicas: 1
+        #  server:
+        #    autoscaling:
+        #      enabled: true
+        #      minReplicas: 2
+        #  repoServer:
+        #    autoscaling:
+        #      enabled: true
+        #      minReplicas: 2
+        #  applicationSet:
+        #    replicas: 2
 
