@@ -3,6 +3,8 @@ kind: ClusterDeployment
 metadata:
   name: {{ .Values.aws.name }}
   namespace: {{ .Values.aws.namespace }}
+  labels:
+    environment: production
 spec:
   template: {{ .Values.aws.template }}
   credential: {{ .Values.aws.credential }}
