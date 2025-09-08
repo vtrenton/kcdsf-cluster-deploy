@@ -1,11 +1,11 @@
 apiVersion: k0rdent.mirantis.com/v1beta1
 kind: ClusterDeployment
 metadata:
-  name: my-gcp-cluster
-  namespace: kcm-system
+  name: {{ .Values.gcloud.name }}
+  namespace: {{ .Values.gcloud.namespace }}
 spec:
-  template: gcp-standalone-cp-1-0-12
-  credential: gcp-credential
+  template: {{ .Values.gcloud.template }} 
+  credential: {{ .Values.gcloud.credential }} 
   config:
     project: {{ .Values.gcloud.project }}
     region: {{ .Values.gcloud.region }}
