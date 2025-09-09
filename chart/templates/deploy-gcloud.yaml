@@ -21,8 +21,8 @@ spec:
       image: {{ .Values.gcloud.imageFamily }}
       publicIP: true
     workersNumber: {{ .Values.gcloud.workerReplicas }}
- serviceSpec:
-   services:
+  serviceSpec:
+    services:
      - name: ingress-nginx
        namespace: ingress-nginx
        template: ingress-nginx-4-13-0
